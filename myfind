@@ -1,0 +1,55 @@
+#! /bin/bash
+
+
+print_usage () {
+	echo "
+Usage: $0 [OPTIONS] grep_arg
+
+Wrapper for running finds with a grep, e.g:
+$ find OXi/oxixmlserver -name \"*tcl\" -exec grep --colour -i txsysxfer {} +
+
+More generally, the places can be set as follows:
+$ find <find_loc> ?-name \"*<find_type>\" -exec grep --colour ?-i? <grep_arg> {} +
+
+OPTIONS:
+    -l find_loc    location to use as root of search
+    -t find_type   file extension to search for
+    -i             grep case insensitive
+    -o             just output find statement, don't execute
+"
+}
+
+find_loc=.
+find_type=
+grep_insensitive=
+execute=true
+
+while getopts l:t:s:hi o
+do
+	case $o in
+		h) print_usage; exit;;
+		l) find_loc=$OPTARG;;
+		t) find_type="-name \"*$OPTARG\"";;
+		i) grep_insensitive="-i";;
+		s) execute=false;;
+	esac
+done
+
+shift $(($OPTIND - 1))
+
+if [ $# -eq 0 ]
+then
+	echo $*
+	print_usage
+	exit
+fi
+
+cmd="find $find_loc $find_type -exec grep --color $grep_insensitive \"$1\" {} +"
+
+
+echo $cmd
+
+if $execute
+then
+	eval $cmd
+fi
