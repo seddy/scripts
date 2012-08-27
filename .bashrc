@@ -19,7 +19,7 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set prompt
@@ -28,17 +28,18 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;3
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+	;;
 *)
-    ;;
+	;;
 esac
 
 # Alias definitions.
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
+	eval "`dircolors -b`"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
 fi
 
 # Determine whether working at work or remotely, LOCATION used
@@ -71,7 +72,6 @@ path_items=(
 	/usr/bin
 	/usr/sbin
 	/bin
-	/prj/openbet/bin
 	/usr/games
 	/usr/local/bin
 	$HOME/scripts
