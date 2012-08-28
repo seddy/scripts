@@ -90,5 +90,10 @@ if [ -f $HOME/.openbet_env.bashrc ]; then
 	source $HOME/.openbet_env.bashrc
 fi
 
+# noths specific setup
+if [ -f $HOME/scripts_noths/noths.bashrc ]; then
+	source $HOME/scripts_noths/noths.bashrc
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
