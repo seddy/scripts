@@ -3,16 +3,29 @@ set background=dark
 set hlsearch
 set ai
 set is
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 set number
 set mouse=nvi
 set t_Co=256
 set list
 colorscheme dante
 
+set expandtab
+
 set nocp
-filetype plugin on
+" filetype plugin off
+
+" Vundle settings
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+"  BUNDLES GO HERE
+"Bundle 'vim-less'
+
+filetype plugin indent on " required for vundle...
 
 syn sync minlines=1000
 
@@ -29,6 +42,25 @@ set listchars=tab:>\
 " Toggle list and numbers on/off
 map  :set nolist! nonumber! <CR>
 
+" Remove all trailing whitespace in a file
+map  :%s/[ ^I]\+$// <CR>
+
+" nicked from here: http://vim.wikia.com/wiki/Commenting_out_a_range_of_lines
+"augroup vimrc_filetype
+"  autocmd!
+"  autocmd FileType c call s:MyCSettings()
+"  autocmd FileType vim call s:MyVimSettings()
+"  autocmd FileType rb call s:MyRubySettings()
+"augroup end
+
+" Clear all comment markers (one rule for all languages)
+" map _ :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:noh<CR>
+map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
+
+"function! s:MyRubySettings()
+" Insert comments markers
+map - :s/^/#/<CR>:noh<CR>
+"endfunction
 
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
@@ -323,3 +355,5 @@ function ToggleFold()
 endfunction
 
 nmap <space> :call ToggleFold()<CR>
+
+nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>

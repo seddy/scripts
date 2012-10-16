@@ -9,29 +9,45 @@ Wrapper for running finds with a grep, e.g:
 $ find OXi/oxixmlserver -name \"*tcl\" -exec grep --colour -i txsysxfer {} +
 
 More generally, the places can be set as follows:
-$ find <find_loc> ?-name \"*<find_type>\" -exec grep --colour ?-i? <grep_arg> {} +
+$ find <find_loc> ?-name \"*<find_type>\"? -exec grep --colour ?-i? ?-w? <grep_arg> {} +
+
+The -f flag will search for filenames instead of grepping files, and is
+analogous to the following (grep is simply for highlighting):
+$ find <find_loc> ?-name \"*<find_type>\"? -name <grep_arg> | grep --colour <grep_arg>
 
 OPTIONS:
-    -l find_loc    location to use as root of search
-    -t find_type   file extension to search for
+    -a             grep with color=always, to persist colourings
+    -f             search for filename instead of grepping file
     -i             grep case insensitive
+    -l find_loc    location to use as root of search
+    -n             grep with line numbers
     -o             just output find statement, don't execute
+    -t find_type   file extension to search for
+    -w             grep for whole words, i.e. grep -w
 "
 }
 
 find_loc=.
 find_type=
 grep_insensitive=
+grep_numbers=
+grep_whole_word=
 execute=true
+filename=false
+color="--color"
 
-while getopts l:t:s:hi o
+while getopts l:t:hifowan o
 do
 	case $o in
+		a) color="--color=always";;
+		f) filename=true;;
 		h) print_usage; exit;;
-		l) find_loc=$OPTARG;;
-		t) find_type="-name \"*$OPTARG\"";;
 		i) grep_insensitive="-i";;
-		s) execute=false;;
+		l) find_loc=$OPTARG;;
+		n) grep_numbers="-n";;
+		o) execute=false;;
+		t) find_type="-name \"*.$OPTARG\"";;
+		w) grep_whole_word="-w"
 	esac
 done
 
@@ -44,7 +60,12 @@ then
 	exit
 fi
 
-cmd="find $find_loc $find_type -exec grep --color $grep_insensitive \"$1\" {} +"
+if $filename
+then
+	cmd="find $find_loc $find_type -name \"*$1*\" | grep --colour $1"
+else
+	cmd="find $find_loc $find_type -exec grep $color $grep_insensitive $grep_numbers $grep_whole_word \"$1\" {} +"
+fi
 
 
 echo $cmd

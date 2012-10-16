@@ -22,9 +22,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set prompt
-PS1='\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]:>\[\033[0m\] '
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -68,6 +65,8 @@ export EXINIT="set notimeout"
 PATH=""
 
 path_items=(
+	./bin
+	$HOME/.rvm/bin
 	$HOME/bin
 	/usr/bin
 	/usr/sbin
@@ -75,7 +74,6 @@ path_items=(
 	/usr/games
 	/usr/local/bin
 	$HOME/scripts
-	$HOME/.rvm/bin
 )
 
 for i in ${path_items[@]}
@@ -96,4 +94,9 @@ if [ -f $HOME/scripts_noths/noths.bashrc ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+# set prompt - note this will be overwritten by scripts/set_prompt_status
+# if installed!
+PS1='\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]:>\[\033[0m\] '
+PROMPT_COMMAND="$PROMPT_COMMAND && source /home/esaunder/scripts/set_prompt_status"
 
