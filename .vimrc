@@ -24,6 +24,7 @@ Bundle 'gmarik/vundle'
 
 "  BUNDLES GO HERE
 "Bundle 'vim-less'
+Bundle 'ruby-matchit'
 
 filetype plugin indent on " required for vundle...
 
