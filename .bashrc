@@ -100,3 +100,19 @@ fi
 PS1='\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]:>\[\033[0m\] '
 PROMPT_COMMAND="$PROMPT_COMMAND && source /home/esaunder/scripts/set_prompt_status"
 
+alias rs="bundle exec rspec -c --format nested"
+
+# Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
+# for more details
+function android-connect () {
+  echo "Connecting as sudo to /media/GalaxyNexus ..."
+  sudo mtpfs -o allow_other /media/GalaxyNexus
+  echo "Done!"
+}
+
+function android-disconnect () {
+  echo "Disconnecting /media/GalaxyNexus..."
+  sudo fusermount -u /media/GalaxyNexus
+  echo "Done!"
+}
+

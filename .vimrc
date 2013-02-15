@@ -14,7 +14,12 @@ colorscheme dante
 set expandtab
 
 set nocp
-" filetype plugin off
+filetype plugin off
+
+" Read .pp and .god files as ruby files for syntax
+au BufNewFile,BufRead *.pp set filetype=ruby
+au BufNewFile,BufRead *.god set filetype=ruby
+au BufNewFile,BufRead *.rabl set filetype=ruby
 
 " Vundle settings
 filetype off
@@ -24,7 +29,7 @@ Bundle 'gmarik/vundle'
 
 "  BUNDLES GO HERE
 "Bundle 'vim-less'
-Bundle 'ruby-matchit'
+"Bundle 'ruby-matchit'
 
 filetype plugin indent on " required for vundle...
 

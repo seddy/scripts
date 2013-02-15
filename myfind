@@ -27,7 +27,8 @@ OPTIONS:
 "
 }
 
-find_loc=.
+#find_loc=.
+find_loc=$(ls | grep -v log)
 find_type=
 grep_insensitive=
 grep_numbers=
@@ -62,7 +63,7 @@ fi
 
 if $filename
 then
-	cmd="find $find_loc $find_type -name \"*$1*\" | grep --colour $1"
+	cmd="find $find_loc $find_type -name \"*$1*\" | grep $color $1"
 else
 	cmd="find $find_loc $find_type -exec grep $color $grep_insensitive $grep_numbers $grep_whole_word \"$1\" {} +"
 fi
