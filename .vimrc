@@ -22,10 +22,10 @@ au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
 
 " Vundle settings
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+" filetype off
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
+" Bundle 'gmarik/vundle'
 
 "  BUNDLES GO HERE
 "Bundle 'vim-less'
