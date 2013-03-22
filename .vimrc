@@ -21,17 +21,17 @@ au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
 
-" Vundle settings
-" filetype off
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-" Bundle 'gmarik/vundle'
+" Taken from /etc/vim/vimrc
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
-"  BUNDLES GO HERE
-"Bundle 'vim-less'
-"Bundle 'ruby-matchit'
-
-filetype plugin indent on " required for vundle...
+" Start up pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 syn sync minlines=1000
 
@@ -50,14 +50,6 @@ map  :set nolist! nonumber! <CR>
 
 " Remove all trailing whitespace in a file
 map  :%s/[ ^I]\+$// <CR>
-
-" nicked from here: http://vim.wikia.com/wiki/Commenting_out_a_range_of_lines
-"augroup vimrc_filetype
-"  autocmd!
-"  autocmd FileType c call s:MyCSettings()
-"  autocmd FileType vim call s:MyVimSettings()
-"  autocmd FileType rb call s:MyRubySettings()
-"augroup end
 
 " Clear all comment markers (one rule for all languages)
 " map _ :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:noh<CR>
