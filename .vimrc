@@ -58,7 +58,9 @@ map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
 "function! s:MyRubySettings()
 " Insert comments markers
 map - :s/^/#/<CR>:noh<CR>
-"endfunction
+
+" Set sensible background for autocomplete
+highlight Pmenu ctermfg=18 ctermbg=243 guibg=grey30
 
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
