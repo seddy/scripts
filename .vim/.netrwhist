@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/esaunder'
-let g:netrw_dirhist_2='/home/esaunder/sites/noths/www/lib/tasks/fix'
-let g:netrw_dirhist_3='/home/esaunder/sites/noths/www/config/initializers'
-let g:netrw_dirhist_4='/home/esaunder/scripts_noths'
-let g:netrw_dirhist_5='/home/esaunder/sites/noths/www/config/deploy_recipes'
-let g:netrw_dirhist_6='/home/esaunder/sites/noths/www/app/models/partner'
-let g:netrw_dirhist_7='/home/esaunder/sites/noths/www/app/views/admin/transaction_upload'
-let g:netrw_dirhist_8='/home/esaunder/sites/noths/www/lib/tasks/fix'
-let g:netrw_dirhist_9='/home/esaunder/sites/noths/www/app/notifications'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/esaunder/sites/interviews/johncant/lib'
+let g:netrw_dirhist_2='/home/esaunder/sites/noths/www/app/models'
+let g:netrw_dirhist_3='/home/esaunder/scripts_noths'

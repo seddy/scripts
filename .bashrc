@@ -98,9 +98,15 @@ fi
 # set prompt - note this will be overwritten by scripts/set_prompt_status
 # if installed!
 PS1='\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]:>\[\033[0m\] '
-PROMPT_COMMAND="$PROMPT_COMMAND && source /home/esaunder/scripts/set_prompt_status"
+if [[ $PROMPT_COMMAND != "" ]]
+then
+  PROMPT_COMMAND="$PROMPT_COMMAND && source /home/esaunder/scripts/set_prompt_status"
+else
+  PROMPT_COMMAND="source /home/esaunder/scripts/set_prompt_status"
+fi
 
 alias rs="bundle exec rspec -c --format nested"
+alias rs="zeus rspec -c --format nested"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details

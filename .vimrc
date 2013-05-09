@@ -1,10 +1,11 @@
 syntax on
 set background=dark
 set hlsearch
-set ai
+"set autoindent
+"set smartindent
 set is
-set ts=2
-set sw=2
+set tabstop=2
+set shiftwidth=2
 set number
 set mouse=nvi
 set t_Co=256
@@ -14,7 +15,8 @@ colorscheme dante
 set expandtab
 
 set nocp
-filetype plugin off
+filetype indent on
+"filetype plugin off
 
 " Read .pp and .god files as ruby files for syntax
 au BufNewFile,BufRead *.pp set filetype=ruby
@@ -61,6 +63,17 @@ map - :s/^/#/<CR>:noh<CR>
 
 " Set sensible background for autocomplete
 highlight Pmenu ctermfg=18 ctermbg=243 guibg=grey30
+
+" syntastic (plugin) setup
+" see :help syntastic for more info
+let g:syntastic_mode_map = { 'mode': 'active',
+   \ 'active_filetypes': ['ruby', 'eruby', 'php', 'css', 'less', 'cucumber', 'javascript'],
+   \ 'passive_filetypes': ['puppet'] }
+
+let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_quiet_warnings=1
 
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
