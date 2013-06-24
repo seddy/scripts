@@ -106,7 +106,7 @@ else
 fi
 
 alias rs="bundle exec rspec -c --format nested"
-alias rs="zeus rspec -c --format nested"
+alias zs="zeus rspec -c --format nested"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details

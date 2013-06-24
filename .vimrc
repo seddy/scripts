@@ -61,6 +61,9 @@ map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
 " Insert comments markers
 map - :s/^/#/<CR>:noh<CR>
 
+" Maps :T to restarting the app
+cnoreabbrev T ! echo "Restarting app" && touch /home/esaunder/sites/noths/www/tmp/restart.txt
+
 " Set sensible background for autocomplete
 highlight Pmenu ctermfg=18 ctermbg=243 guibg=grey30
 
