@@ -78,6 +78,19 @@ let g:syntastic_always_populate_loc_list=1
 " let g:syntastic_auto_loc_list=1
 " let g:syntastic_quiet_warnings=1
 
+" Unite settings
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+
+let g:unite_prompt='» '
+let g:unite_source_grep_command='ack'
+let g:unite_source_grep_default_opts='--no-heading --no-color'
+let g:unite_source_grep_recursive_opt=''
+nnoremap <silent> <space>/ :Unite -no-quit -auto-preview -buffer-name=search grep:.<cr>
+
+" Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
 hi x018_DarkBlue ctermfg=18 guifg=#000087
