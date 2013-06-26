@@ -90,6 +90,12 @@ let g:unite_source_grep_default_opts='--no-heading --no-color'
 let g:unite_source_grep_recursive_opt=''
 nnoremap <silent> <space>/ :Unite -no-quit -auto-preview -buffer-name=search grep:.<cr>
 
+" Always display powerline
+" 0: never
+" 1: only if there are at least two windows (this one is the default)
+" 2: always
+set laststatus=2
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
