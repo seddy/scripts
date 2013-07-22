@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/vimshell"]
 	path = .vim/bundle/vimshell
 	url = https://github.com/Shougo/vimshell.vim.git
+[submodule ".vim/bundle/vimproc.vim"]
+	path = .vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
