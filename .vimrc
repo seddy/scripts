@@ -64,6 +64,12 @@ map - :s/^/#/<CR>:noh<CR>
 " Maps :T to restarting the app
 cnoreabbrev T ! echo "Restarting app" && touch /home/esaunder/sites/noths/www/tmp/restart.txt
 
+" Maps :Z to restarting zeus
+cnoreabbrev Z ! echo "Restarting zeus" && restart_zeus
+
+map <space>t :T<cr>
+map <space>x :Z<cr>
+
 " Set sensible background for autocomplete
 highlight Pmenu ctermfg=18 ctermbg=243 guibg=grey30
 
@@ -95,6 +101,10 @@ nnoremap <silent> <space>/ :Unite -no-quit -auto-preview -buffer-name=search gre
 " 1: only if there are at least two windows (this one is the default)
 " 2: always
 set laststatus=2
+
+" VimShell into a new irb window
+map <space>r :VimShellInteractive --split="split \| resize 20" irb<cr>
+map <space>z :VimShellInteractive --split="split \| resize 20" ssh dev.noths.com -t "cd current && zeus c"<cr>
 
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000

@@ -31,3 +31,5 @@
 [push]
   default = current
 
+[web]
+	browser = google-chrome
