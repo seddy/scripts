@@ -23,6 +23,7 @@
   df = diff
   dc = diff --cached
   l20 = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' -20 --date=short --graph
+  l = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' --date=short --graph
   lg = log -p
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
