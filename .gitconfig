@@ -31,6 +31,10 @@
   standup = log --since yesterday --oneline --author 'Ed Saunders'
 [push]
   default = current
+[pager]
+  diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  log = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
 
 [web]
 	browser = google-chrome
