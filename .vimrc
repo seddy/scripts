@@ -41,6 +41,11 @@ syn sync minlines=1000
 highlight RedundantSpaces ctermbg=238 guibg=red
 match RedundantSpaces /\s\+$/
 
+" Put a line on 80 characters
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(200,999),",")
+
 " To make it show up in new tabs - use Ctrl-E
 map  :match RedundantSpaces /\s\+$/ <CR>
 
