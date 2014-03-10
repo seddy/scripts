@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+HOURS=$1
+
+if [ -z $HOURS ]; then
+  echo "Usage: $0 <num hours>"
+  exit 1
+fi
+
+ssh-add -t ${HOURS}H $(dirname $0)/id_rsa
+diskutil umount force $(dirname $0)
+
