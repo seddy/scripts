@@ -23,6 +23,9 @@ au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
 
+" Checks the files for changes on filesystem when we get focus
+au WinEnter * checktime
+
 " Taken from /etc/vim/vimrc
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
