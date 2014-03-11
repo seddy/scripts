@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export ARCH=$(uname -s)
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -35,7 +37,12 @@ esac
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
 	eval "`dircolors -b`"
-	alias ls='ls --color=auto'
+	if [ $ARCH != "Linux" ]; then
+            alias ls='ls -G'    
+	else
+            alias ls='ls --color=auto'
+	fi
+
 	alias grep='grep --color=auto'
 fi
 
@@ -100,9 +107,9 @@ fi
 PS1='\[\033[0;36m\]\h\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]:>\[\033[0m\] '
 if [[ $PROMPT_COMMAND != "" ]]
 then
-  PROMPT_COMMAND="$PROMPT_COMMAND && source /home/esaunder/scripts/set_prompt_status"
+  PROMPT_COMMAND="$PROMPT_COMMAND && source ~/scripts/set_prompt_status"
 else
-  PROMPT_COMMAND="source /home/esaunder/scripts/set_prompt_status"
+  PROMPT_COMMAND="source ~/scripts/set_prompt_status"
 fi
 
 alias rs="bundle exec rspec -c --format nested"
