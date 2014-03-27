@@ -1,0 +1,22 @@
+#!/bin/bash
+
+function ensure_link {
+  test -e "$2"
+  if [[ $? == 0 ]]
+  then
+    mv $1 "$1.orig"
+  fi
+  test -L "$2" || ln -s "$1" "$2"
+}
+
+ensure_link "${PWD}/.bashrc" "$HOME/.bashrc"
+ensure_link "${PWD}/.vimrc" "$HOME/.vimrc"
+ensure_link "${PWD}/.vim" "$HOME/.vim"
+ensure_link "${PWD}/.ackrc" "$HOME/.ackrc"
+ensure_link "${PWD}/.gitconfig" "$HOME/.gitconfig"
+ensure_link "${PWD}/.gitignore" "$HOME/.gitignore"
+
+cd $HOME/scripts
+git submodule init
+git submodule update
+
