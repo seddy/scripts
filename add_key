@@ -7,6 +7,5 @@ if [ -z $HOURS ]; then
   exit 1
 fi
 
-ssh-add -t ${HOURS}H $(dirname $0)/id_rsa
-diskutil umount force $(dirname $0)
+ssh-add -t ${HOURS}H ~/.ssh/noths_ed
 

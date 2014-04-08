@@ -9,6 +9,8 @@ function ensure_link {
   test -L "$2" || ln -s "$1" "$2"
 }
 
+cd $HOME/scripts
+
 ensure_link "${PWD}/.bashrc" "$HOME/.bashrc"
 ensure_link "${PWD}/.vimrc" "$HOME/.vimrc"
 ensure_link "${PWD}/.vim" "$HOME/.vim"
@@ -16,7 +18,11 @@ ensure_link "${PWD}/.ackrc" "$HOME/.ackrc"
 ensure_link "${PWD}/.gitconfig" "$HOME/.gitconfig"
 ensure_link "${PWD}/.gitignore" "$HOME/.gitignore"
 
-cd $HOME/scripts
+if [ -d $HOME/scripts_noths ]
+then
+  cp $HOME/scripts_noths/noths_ed.ssh_key $HOME/.ssh/noths_ed
+fi
+
 git submodule init
 git submodule update
 
