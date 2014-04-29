@@ -14,6 +14,9 @@ colorscheme dante
 
 set expandtab
 
+" Shows all the files when trying to open a new file and tabbing out
+set wildmode=list:longest
+
 set nocp
 filetype indent on
 "filetype plugin off
