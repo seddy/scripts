@@ -1,7 +1,7 @@
 [user]
-	email = danhart+edsaunders@notonthehighstreet.com
-	name = Dan Hart and Ed Saunders
-	initials = dh es
+	email = edsaunders@notonthehighstreet.com
+	name = Ed Saunders
+	initials = es
 [core]
   excludesfile = ~/.gitignore_global
 [credential]
@@ -33,9 +33,11 @@
 [push]
   default = current
 [pager]
-  diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-  show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-  log =  /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  log =  /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+[merge]
+  conflictstyle = diff3
 
 [web]
 	browser = google-chrome
