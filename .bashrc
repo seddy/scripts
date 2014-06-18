@@ -83,6 +83,7 @@ path_items=(
   $HOME/scripts
   /user/sbin
   /usr/local/bin
+  $HOME/perl5/bin
 )
 
 for i in ${path_items[@]}
@@ -131,7 +132,15 @@ function android-disconnect () {
   echo "Done!"
 }
 
+# Shit I need for ack for some reason
+export PERL5LIB=/home/esaunder/perl5/lib/perl5
 
 PATH=$PATH:/usr/share/ruby-rvm/bin # Add RVM to PATH for scripting
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+PERL_MB_OPT="--install_base \"/home/esaunder/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/esaunder/perl5"; export PERL_MM_OPT;
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
