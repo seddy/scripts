@@ -40,6 +40,7 @@ hi StatusLine   term=reverse cterm=reverse gui=reverse guifg=gray60
 hi StatusLineNC term=reverse cterm=reverse gui=reverse guifg=gray40
 hi VertSplit    term=reverse cterm=reverse gui=bold,reverse guifg=gray40
 hi Title        term=bold ctermfg=magenta gui=bold guifg=aquamarine
+hi clear SignColumn
 
 " syntax hi colors
 hi Comment      term=bold ctermfg=darkcyan guifg=cyan4

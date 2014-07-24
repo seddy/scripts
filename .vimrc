@@ -107,6 +107,10 @@ let g:unite_source_grep_default_opts='--no-heading --no-color'
 let g:unite_source_grep_recursive_opt=''
 nnoremap <silent> <space>/ :Unite -no-quit -auto-preview -buffer-name=search grep:.<cr>
 
+" Gitgutter configuration - set updatetime to something low, according to their
+" README this is glitchy if < 1000ms
+set updatetime=1000
+
 " Always display powerline
 " 0: never
 " 1: only if there are at least two windows (this one is the default)
@@ -410,6 +414,6 @@ function ToggleFold()
    endif
 endfunction
 
-nmap <space> :call ToggleFold()<CR>
+nmap <space>t :call ToggleFold()<CR>
 
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
