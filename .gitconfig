@@ -1,43 +1,44 @@
-[user]
-	email = edsaunders@notonthehighstreet.com
-	name = Ed Saunders
-	initials = es
-[core]
-  excludesfile = ~/.gitignore_global
-[credential]
-  helper = cache --timeout=3600
-[color]
-  diff = auto
-  branch = auto
-  status = auto
-[log]
-  decorate = true
-[instaweb]
-  httpd = apache2ctl
-  browser = google-chrome
-  port = 12345
 [alias]
-  st = status
-  ci = commit
   br = branch
+  ci = commit
   co = checkout
-  df = diff
   dc = diff --cached
-  l20 = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' -20 --date=short --graph
+  df = diff
   l = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' --date=short --graph
+  l20 = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' -20 --date=short --graph
   lg = log -p
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
+  st = status
   standup = log --since yesterday --oneline --author 'Ed Saunders'
-[push]
-  default = current
-[pager]
-  diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
-  show = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
-  log =  /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[core]
+  excludesfile = ~/.gitignore_global
+[credential]
+  helper = cache --timeout=3600
+[instaweb]
+  browser = google-chrome
+  httpd = apache2ctl
+  port = 12345
+[log]
+  date=short
+  decorate = true
+  pretty='%C(yellow)%h %C(green)%an %ad %C()%s'
 [merge]
   conflictstyle = diff3
-
+[pager]
+  diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  log =  /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+[push]
+  default = current
+[user]
+  email = edsaunders@notonthehighstreet.com
+  initials = es
+  name = Ed Saunders
 [web]
-	browser = google-chrome
+  browser = google-chrome
