@@ -22,7 +22,7 @@
 [credential]
   helper = cache --timeout=3600
 [format]
-  pretty = format:%C(yellow)%h %C(green) %an %C(yellow)| %C(green)%ai %C()%s
+  pretty = format:%C(yellow)%h %C(green)%an %C(yellow)| %C(green dim)%ai %C()%s
 [instaweb]
   browser = google-chrome
   httpd = apache2ctl
