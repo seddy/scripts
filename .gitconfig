@@ -4,6 +4,7 @@
   co = checkout
   dc = diff --cached
   df = diff
+  flog = log --pretty=medium
   l = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' --date=short --graph
   l20 = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' -20 --date=short --graph
   lg = log -p
@@ -20,14 +21,14 @@
   excludesfile = ~/.gitignore_global
 [credential]
   helper = cache --timeout=3600
+[format]
+  pretty = format:%C(yellow)%h %C(green) %an %C(yellow)| %C(green)%ai %C()%s
 [instaweb]
   browser = google-chrome
   httpd = apache2ctl
   port = 12345
 [log]
-  date=short
   decorate = true
-  pretty='%C(yellow)%h %C(green)%an %ad %C()%s'
 [merge]
   conflictstyle = diff3
 [pager]
