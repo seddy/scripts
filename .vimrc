@@ -21,6 +21,9 @@ set nocp
 filetype indent on
 "filetype plugin off
 
+" Always strip whitespace for it be evil
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Read .pp and .god files as ruby files for syntax
 au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead *.god set filetype=ruby
@@ -56,7 +59,7 @@ let &colorcolumn="80,".join(range(200,999),",")
 map  :match RedundantSpaces /\s\+$/ <CR>
 
 " :set list " :set nolist
-set listchars=tab:>\ 
+set listchars=tab:>\.
 
 " Toggle list and numbers on/off
 map  :set nolist! nonumber! <CR>
