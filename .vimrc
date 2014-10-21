@@ -76,8 +76,7 @@ map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
 map - :s/^/#/<CR>:noh<CR>
 
 " Maps :T to restarting the app
-"cnoreabbrev T ! echo "Restarting app" && ssh dev.noths.com "cd /var/sites/notonthehighstreet/current && touch tmp/restart.txt"
-cnoreabbrev T ! echo "Restarting app" && touch /home/esaunder/sites/noths/www/tmp/restart.txt
+cnoreabbrev T ! echo "Restarting app"; touch /home/esaunder/sites/noths/www/tmp/restart.txt; curl --silent www.dev.noths.com > /dev/null &
 
 " Maps :Z to restarting zeus
 cnoreabbrev Z ! echo "Restarting zeus" && restart_zeus

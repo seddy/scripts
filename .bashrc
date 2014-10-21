@@ -115,8 +115,8 @@ else
   PROMPT_COMMAND="source ~/scripts/set_prompt_status"
 fi
 
-alias rs="bundle exec rspec -c --format nested"
-alias zs="zeus rspec -c --format nested"
+alias rs="bundle exec rspec -c --format=doc"
+alias zs="zeus rspec -c --format=doc"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details
