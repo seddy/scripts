@@ -39,7 +39,7 @@ if [ "$TERM" != "dumb" ]; then
   eval "`dircolors -b`"
   if [ $ARCH != "Linux" ]; then
     alias vi='vim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
-    alias ls='ls -G'    
+    alias ls='ls -G'
   else
     alias ls='ls --color=auto'
   fi
@@ -117,6 +117,7 @@ fi
 
 alias rs="bundle exec rspec -c --format=doc"
 alias zs="zeus rspec -c --format=doc"
+alias ss="script/single_spec -c --format=doc"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details

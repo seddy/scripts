@@ -19,7 +19,7 @@ set wildmode=list:longest
 
 set nocp
 filetype indent on
-"filetype plugin off
+filetype plugin on
 
 " Always strip whitespace for it be evil
 autocmd BufWritePre * :%s/\s\+$//e
@@ -57,6 +57,9 @@ let &colorcolumn="80,".join(range(200,999),",")
 
 " To make it show up in new tabs - use Ctrl-E
 map  :match RedundantSpaces /\s\+$/ <CR>
+
+" Include a space when commenting
+let NERDSpaceDelims=1
 
 " :set list " :set nolist
 set listchars=tab:>\.
