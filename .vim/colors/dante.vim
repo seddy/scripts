@@ -55,6 +55,7 @@ hi Error        term=reverse ctermfg=gray ctermbg=red guifg=gray guibg=red3
 hi Todo         term=standout ctermfg=black ctermbg=yellow gui=bold guifg=gray10 guibg=yellow4
 hi Underlined   term=underline cterm=underline ctermfg=cyan gui=underline guifg=slateblue
 hi Number       term=underline ctermfg=darkred guifg=red2
+highlight RedundantSpaces ctermbg=238 guibg=red
 " syntax hi links
 hi link String          Constant
 hi link Character       Constant

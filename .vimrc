@@ -24,6 +24,8 @@ filetype plugin on
 " Always strip whitespace for it be evil
 autocmd BufWritePre * :%s/\s\+$//e
 
+set complete=.,w,b,u,t
+
 " Read .pp and .god files as ruby files for syntax
 au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead *.god set filetype=ruby
@@ -49,6 +51,7 @@ syn sync minlines=1000
 " This is the bit that actually highlights trailing whitespace
 highlight RedundantSpaces ctermbg=238 guibg=red
 match RedundantSpaces /\s\+$/
+autocmd BufWinEnter * match RedundantSpaces /\s\+$/
 
 " Put a line on 80 characters
 let &colorcolumn=join(range(81,999),",")
@@ -58,25 +61,27 @@ let &colorcolumn="80,".join(range(200,999),",")
 " To make it show up in new tabs - use Ctrl-E
 map  :match RedundantSpaces /\s\+$/ <CR>
 
-" Include a space when commenting
-let NERDSpaceDelims=1
-
 " :set list " :set nolist
 set listchars=tab:>\.
 
 " Toggle list and numbers on/off
 map  :set nolist! nonumber! <CR>
 
+" Include a space when commenting
+let NERDSpaceDelims=1
+
 " Remove all trailing whitespace in a file
 map  :%s/[ ^I]\+$// <CR>
 
 " Clear all comment markers (one rule for all languages)
 " map _ :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:noh<CR>
-map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
+" map _ :s/^\([ ^I]*\)#/\1/<CR>:noh<CR>
+map _ <leader>ci
 
 "function! s:MyRubySettings()
 " Insert comments markers
-map - :s/^/#/<CR>:noh<CR>
+" map - :s/^/#/<CR>:noh<CR>
+map - <leader>cl
 
 " Maps :T to restarting the app
 cnoreabbrev T ! echo "Restarting app"; touch /home/esaunder/sites/noths/www/tmp/restart.txt; curl --silent www.dev.noths.com > /dev/null &
