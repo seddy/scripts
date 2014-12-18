@@ -116,6 +116,7 @@ else
 fi
 
 alias rs="bundle exec rspec -c --format=doc"
+alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
 
