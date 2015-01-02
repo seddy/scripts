@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule ".vim/bundle/vim-yaml-helper"]
+	path = .vim/bundle/vim-yaml-helper
+	url = git@github.com:lmeijvogel/vim-yaml-helper.git
