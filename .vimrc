@@ -101,6 +101,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
    \ 'active_filetypes': ['ruby', 'eruby', 'php', 'css', 'less', 'cucumber', 'javascript'],
    \ 'passive_filetypes': ['puppet'] }
 
+autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
 let g:syntastic_always_populate_loc_list=1
 " let g:syntastic_auto_jump=1
 " let g:syntastic_auto_loc_list=1
