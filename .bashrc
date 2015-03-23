@@ -119,6 +119,7 @@ alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
+alias fs="foreman start -f Procfile.local"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details
