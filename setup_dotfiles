@@ -1,9 +1,13 @@
 #!/bin/bash
+# NOTE: Run this from the directory this file is in
 
 function ensure_link {
   test -e "$2"
   if [[ $? == 0 ]]
   then
+    # TODO: There's a bug where this should back up the original, but it copies
+    # it to the PWD rather than the HOME folder, and then just fails to symlink
+    # it...
     mv $1 "$1.orig"
   fi
   test -L "$2" || ln -s "$1" "$2"
