@@ -1,0 +1,3 @@
+# Needed for making ^W work properly in mysql-client - https://bugs.mysql.com/bug.php?id=68449
+bind "^U"    vi-kill-line-prev
+bind "^W"    ed-delete-prev-word
