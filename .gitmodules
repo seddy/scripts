@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/sudo"]
 	path = .vim/bundle/sudo
 	url = git@github.com:vim-scripts/sudo.vim.git
+[submodule ".vim/bundle/vim-colors_atelier-schemes"]
+	path = .vim/bundle/vim-colors_atelier-schemes
+	url = git@github.com:atelierbram/vim-colors_atelier-schemes.git
