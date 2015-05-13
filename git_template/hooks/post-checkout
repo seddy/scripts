@@ -1,11 +1,5 @@
 #! /bin/bash
 
-if [ -f ~/scripts_noths/restart_zeus ]
-then
-  echo "restarting zeus"
-#  ~/scripts_noths/restart_zeus
-fi
-
 if [ -f ~/scripts/regenerate_ctags ]
 then
   echo "regenerating ctags"
