@@ -120,6 +120,7 @@ alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
 alias fs="foreman start -f Procfile.local"
+alias twistilled="cd /home/esaunder/sites/twistilled/twistilled"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details
