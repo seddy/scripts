@@ -23,6 +23,8 @@
   helper = cache --timeout=3600
 [format]
   pretty = format:%C(yellow)%h %C(green)%ai %an%C(yellow) | %C()%s%C(auto)%d
+[init]
+  templatedir = ~/scripts/git_template
 [instaweb]
   browser = google-chrome
   httpd = apache2ctl
