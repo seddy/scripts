@@ -1,6 +1,7 @@
 #! /bin/bash
 
 trap "rm -f .git/tags.$$" EXIT
-ctags --languages=ruby --tag-relative --exclude=.git -Rf tags.$$ 2>/dev/null
+# ctags --languages=ruby --tag-relative --exclude=.git -Rf tags.$$ 2>/dev/null
+ctags --languages=ruby --exclude=.git -Rf tags.$$ 2>/dev/null
 mv tags.$$ tags
 
