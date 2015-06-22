@@ -16,6 +16,8 @@ set expandtab
 
 " Shows all the files when trying to open a new file and tabbing out
 set wildmode=list:longest
+" Ignores these files in ctrlp and tabbing out files
+set wildignore+=*.swp,*.map,public/assets/*
 
 set nocp
 filetype indent on
@@ -97,6 +99,14 @@ highlight Pmenu ctermfg=18 ctermbg=243 guibg=grey30
 
 " syntastic (plugin) setup
 " see :help syntastic for more info
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
 let g:syntastic_mode_map = { 'mode': 'active',
    \ 'active_filetypes': ['ruby', 'eruby', 'php', 'css', 'less', 'cucumber', 'javascript'],
    \ 'passive_filetypes': ['puppet'] }

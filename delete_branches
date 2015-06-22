@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+
+EXCLUDED_BRANCHES = %w(
+  master
+  staging
+)
+
+def run_cmd(cmd)
+  if $DEBUG
+    puts cmd
+  else
+    `#{cmd}`
+  end
+end
+
+def deletion_check_for(branches)
+  puts "DEBUG MODE" if $DEBUG
+  puts
+  puts "***************"
+  puts branches
+  puts "***************"
+  puts
+  puts "Are you sure you wish to proceed? y/n"
+  response = STDIN.gets.chomp
+  exit 1 unless response == "y"
+end
+
+run_cmd("git fetch")
+puts "Moving to staging"
+run_cmd("git checkout -q staging")
+
+if `git status` !~ /Your branch is up-to-date/
+  if `git status` =~ /and can be fast-forwarded/
+    puts "Pulling staging"
+    `git pull`
+  else
+    puts "Unable to fast-forward pull staging, aborting"
+    exit 1
+  end
+end
+
+# Get all local branches which are merged in
+definitely_merged_branches = `git branch --merged staging | grep -v master | grep -v staging`.split(/\n/)
+
+puts "This will delete the following branches, which have definitely been merged:"
+deletion_check_for(definitely_merged_branches)
+run_cmd("git branch -d #{branches.join(" ")}")
+# Sometimes, we get branches locally which get rebased somewhere else and
+# merged in. Our local branch no longer shows up as merged because a different
+# SHA was committed. Consequently, check out all branches and look for "but
+# the upstream is gone" errors, which should indicate these branches.
+`git branch `
+
+puts "DEBUG MODE" if $DEBUG
+puts "This will delete the following branches, which have been merged into master already:"
+puts
+puts "***************"
+puts branches
+puts "***************"
+puts
+puts "Are you sure you wish to proceed? y/n"
+response = STDIN.gets.chomp
+exit 1 unless response == "y"
+
+branches = ARGV - EXCLUDED_BRANCHES
+branches.each do |branch|
+  puts "Deleting #{branch}..."
+
+  run_cmd "git push origin :#{branch}"
+  run_cmd "git branch -d #{branch}"
+  run_cmd "script/jenkins delete #{branch}"
+end
