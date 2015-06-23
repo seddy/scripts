@@ -18,6 +18,9 @@ set expandtab
 set wildmode=list:longest
 " Ignores these files in ctrlp and tabbing out files
 set wildignore+=*.swp,*.map,public/assets/*
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\vpublic\/assets',
+  \ }
 
 set nocp
 filetype indent on
@@ -113,6 +116,13 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+" Start up indent-guides on startup
+" autocmd Filetype coffee let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 3
+let g:indent_guides_guide_size  = 1
+autocmd Filetype coffee IndentGuidesEnable
 
 let g:syntastic_always_populate_loc_list=1
 " let g:syntastic_auto_jump=1

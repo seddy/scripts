@@ -60,6 +60,9 @@ hi Number       term=underline ctermfg=darkred guifg=red2
 highlight RedundantSpaces ctermbg=238 guibg=red
 " For syntastic syntax warnings
 highlight SpellCap ctermfg=darkred guifg=red2
+" vim-indent-guides overrides because ewwwww for defaults
+hi IndentGuidesOdd  ctermbg=236
+hi IndentGuidesEven ctermbg=234
 
 " syntax hi links
 hi link String          Constant
