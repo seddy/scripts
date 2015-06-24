@@ -40,8 +40,8 @@
 [push]
   default = current
 [user]
-	email = edsaunders@notonthehighstreet.com
-	initials = es
-	name = Ed Saunders
+  email = saunders.ed@gmail.com
+  initials = es
+  name = Ed Saunders
 [web]
   browser = google-chrome

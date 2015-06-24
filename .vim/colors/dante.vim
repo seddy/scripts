@@ -66,7 +66,7 @@ hi IndentGuidesEven ctermbg=234
 " 80-line highlight
 hi ColorColumn ctermbg=235 term=reverse
 " For light conditions uncomment this:
-" hi ColorColumn ctermbg=159 term=reverse
+hi ColorColumn ctermbg=159 term=reverse
 
 " syntax hi links
 hi link String          Constant
