@@ -57,12 +57,16 @@ hi Underlined   term=underline cterm=underline ctermfg=cyan gui=underline guifg=
 hi Number       term=underline ctermfg=darkred guifg=red2
 
 " My additions
-highlight RedundantSpaces ctermbg=238 guibg=red
+hi RedundantSpaces ctermbg=152
 " For syntastic syntax warnings
-highlight SpellCap ctermfg=darkred guifg=red2
+hi SpellCap ctermfg=darkred guifg=red2
 " vim-indent-guides overrides because ewwwww for defaults
 hi IndentGuidesOdd  ctermbg=236
 hi IndentGuidesEven ctermbg=234
+" 80-line highlight
+hi ColorColumn ctermbg=235 term=reverse
+" For light conditions uncomment this:
+" hi ColorColumn ctermbg=159 term=reverse
 
 " syntax hi links
 hi link String          Constant
