@@ -9,7 +9,6 @@ set shiftwidth=2
 set number
 set mouse=nvi
 set t_Co=256
-set list
 colorscheme dante
 
 set expandtab
@@ -64,7 +63,8 @@ let &colorcolumn="80"
 " To make it show up in new tabs - use Ctrl-E
 map  :match RedundantSpaces /\s\+$/ <CR>
 
-" :set list " :set nolist
+" :set list! to toggle
+set list
 set listchars=tab:>\.
 
 " Toggle list and numbers on/off
@@ -116,11 +116,12 @@ autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Start up indent-guides on startup
-" autocmd Filetype coffee let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 3
-let g:indent_guides_guide_size  = 1
-autocmd Filetype coffee IndentGuidesEnable
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors           = 0
+let g:indent_guides_start_level           = 3
+let g:indent_guides_guide_size            = 1
+" Trying out this on all filetypes...
+" autocmd Filetype coffee IndentGuidesEnable
 
 let g:syntastic_always_populate_loc_list=1
 " let g:syntastic_auto_jump=1
