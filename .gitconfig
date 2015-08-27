@@ -4,12 +4,9 @@
   co = checkout
   dc = diff --cached
   df = diff
+  l = log --topo-order
   flog = log --pretty=medium
-  l = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' --date=short --graph
-  l20 = log --pretty='%C(yellow)%h %C(green)%an %ad %C()%s' -20 --date=short --graph
-  lg = log -p
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  glog = log --graph --decorate --pretty=oneline --abbrev-commit
   ls = ls-files
   st = status
   standup = log --since yesterday --oneline --author 'Ed Saunders'
