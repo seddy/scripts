@@ -103,6 +103,11 @@ if [ -f $HOME/scripts_noths/noths.bashrc ]; then
   source $HOME/scripts_noths/noths.bashrc
 fi
 
+# twistilled specific setup
+if [ -f $HOME/scripts_twistilled/twistilled.bashrc ]; then
+  source $HOME/scripts_twistilled/twistilled.bashrc
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # set prompt - note this will be overwritten by scripts/set_prompt_status
@@ -119,8 +124,6 @@ alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
-alias fs="foreman start -f Procfile.local"
-alias twistilled="cd /home/esaunder/sites/twistilled/twistilled"
 
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details
