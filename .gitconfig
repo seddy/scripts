@@ -30,6 +30,7 @@
   decorate = true
 [merge]
   conflictstyle = diff3
+  tool = vimdiff
 [pager]
   diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
   log =  /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
