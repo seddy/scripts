@@ -160,7 +160,7 @@ map <space>r :VimShellInteractive --split="split \| resize 20" irb<cr>
 map <space>z :VimShellInteractive --split="split \| resize 20" ssh dev.noths.com -t "cd current && zeus c"<cr>
 
 " vim-rspec is awesome
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
