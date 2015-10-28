@@ -125,6 +125,13 @@ alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
 
+# Shorter git aliases, because those keystrokes matter...
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gs="git status"
+alias gf="git fetch"
+
 # Alias nexus mounting - see http://askubuntu.com/questions/207569/how-do-i-connect-a-nexus-7-to-transfer-files
 # for more details
 function android-connect () {
