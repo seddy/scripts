@@ -112,8 +112,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
    \ 'active_filetypes': ['ruby', 'eruby', 'php', 'css', 'less', 'cucumber', 'javascript'],
    \ 'passive_filetypes': ['puppet'] }
 
-autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+" 4-space tabs was a NOTHS frontend thing, fuck that shit!
+" autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+" autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Start up indent-guides on startup
 let g:indent_guides_enable_on_vim_startup = 1
