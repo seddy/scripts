@@ -36,7 +36,10 @@ esac
 # Alias definitions.
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-  eval "`dircolors -b`"
+  if [[ `which dircolors` != "" ]]; then
+    eval "`dircolors -b`"
+  fi
+
   if [ $ARCH != "Linux" ]; then
     alias vi='vim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
     alias ls='ls -G'
