@@ -188,15 +188,15 @@ fi
   if [[ -z "$verbose" ]]; then
     case "$count" in
       "") # no upstream
-        p="" ;;
+        p="?" ;;
       "0	0") # equal to upstream
-        p="=" ;;
+        p="" ;;
       "0	"*) # ahead of upstream
-        p=">" ;;
+        p="↑" ;;
       *"	0") # behind upstream
-        p="<" ;;
+        p="↓" ;;
       *)	    # diverged from upstream
-        p="<>" ;;
+        p="↕" ;;
     esac
   else
     case "$count" in
@@ -226,6 +226,11 @@ fi
   fi
 
 }
+
+# Yeah, it's a hack using 'u', but fuck you these are my hacks and I'm
+# feeling lazy; can't be arsed to play around with the existing
+# "branch_color" stuff
+branch_colour="\[\033[32m\]"
 
 # Helper function that is meant to be called from __git_ps1.  It
 # injects color codes into the appropriate gitstring variables used
@@ -259,7 +264,9 @@ __git_ps1_colorize_gitstring ()
 
   z="$c_clear$z"
   if [ "$w" = "*" ]; then
-    w="$bad_color$w"
+    # w="$bad_color$w"
+    w=""
+    branch_colour="\[\033[31m\]"
   fi
   if [ -n "$i" ]; then
     i="$ok_color$i"
@@ -268,7 +275,9 @@ __git_ps1_colorize_gitstring ()
     s="$flags_color$s"
   fi
   if [ -n "$u" ]; then
-    u="$bad_color$u"
+    # u="$bad_color$u"
+    u=""
+    branch_colour="\[\033[31m\]"
   fi
   r="$c_clear$r"
 }
@@ -299,7 +308,7 @@ __git_ps1 ()
   local detached=no
   local ps1pc_start='\u@\h:\w '
   local ps1pc_end='\$ '
-  local printf_format=' (%s)'
+  local printf_format='(%s)'
 
   case "$#" in
     2|3)	pcmode=yes
@@ -511,7 +520,9 @@ if [ $pcmode = yes ] && [ $ps1_expanded = yes ]; then
 fi
 
 local f="$w$i$s$u"
-local gitstring="$c$b${f:+$z$f}$r$p"
+# This is where we actually format the string!
+local hack_to_make_closing_brace_yellow="\[\e[33m\]"
+local gitstring="$c$branch_colour$b${f:+$z$f}$p$hack_to_make_closing_brace_yellow"
 
 if [ $pcmode = yes ]; then
   if [ "${__git_printf_supports_v-}" != yes ]; then
