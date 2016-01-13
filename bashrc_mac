@@ -111,6 +111,11 @@ if [ -f $HOME/scripts_twistilled/twistilled.bashrc ]; then
   source $HOME/scripts_twistilled/twistilled.bashrc
 fi
 
+# reevoo specific setup
+if [ -f $HOME/scripts_reevoo/reevoo.bashrc ]; then
+  source $HOME/scripts_reevoo/reevoo.bashrc
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Mac stupid overrides
@@ -121,10 +126,12 @@ source "$HOME/scripts/git-completion.bash"
 source ~/scripts/set_prompt_status_mac.sh
 
 # This will add up/down arrows and show untracked files
-export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWDIRTYSTATE="auto"
+export GIT_PS1_SHOWUPSTREAM=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWCOLORHINTS=1
 
-export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\033[0;33m\]" "\[\033[33m\]:> \[\e[0m\]"'
+export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\e[0m\]" "\[\033[33m\]:> \[\e[0m\]"'
 
 alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
@@ -165,3 +172,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/esaunder/perl5"; export PERL_MM_OPT;
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# This is to allow homebrew to span github I think
+export HOMEBREW_GITHUB_API_TOKEN=fc1fd53bcb907c2e26cd793ed70f5e52d7b7b7f9
