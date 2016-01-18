@@ -166,6 +166,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" vim-markdown options
+let g:vim_markdown_folding_disabled = 1
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f

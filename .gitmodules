@@ -88,3 +88,9 @@
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
 	url = git@github.com:digitaltoad/vim-jade.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git
