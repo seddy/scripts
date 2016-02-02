@@ -77,7 +77,7 @@ export EXINIT="set notimeout"
 
 path_items=(
   ./bin
-  $HOME/.rvm/bin
+  # $HOME/.rvm/bin
   # $HOME/bin
   # /usr/bin
   # /usr/sbin
@@ -116,7 +116,7 @@ if [ -f $HOME/scripts_reevoo/reevoo.bashrc ]; then
   source $HOME/scripts_reevoo/reevoo.bashrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Mac stupid overrides
 source "$HOME/scripts/git-completion.bash"
@@ -163,9 +163,9 @@ function android-disconnect () {
 # Shit I need for ack for some reason
 export PERL5LIB=/home/esaunder/perl5/lib/perl5
 
-PATH=$PATH:/usr/share/ruby-rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:/usr/share/ruby-rvm/bin # Add RVM to PATH for scripting
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 PERL_MB_OPT="--install_base \"/home/esaunder/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/esaunder/perl5"; export PERL_MM_OPT;
@@ -175,3 +175,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # This is to allow homebrew to span github I think
 export HOMEBREW_GITHUB_API_TOKEN=fc1fd53bcb907c2e26cd793ed70f5e52d7b7b7f9
+
+# rbenv setup required here
+eval "$(rbenv init -)"
+
+# Add ssh key for deploying to staging servers
+ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
