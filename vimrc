@@ -58,7 +58,8 @@ autocmd BufWinEnter * match RedundantSpaces /\s\+$/
 
 " Put a line on 80 characters
 " let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80"
+" Don't believe reevoo are making me make this 120, BOOO
+let &colorcolumn="120"
 
 " To make it show up in new tabs - use Ctrl-E
 map  :match RedundantSpaces /\s\+$/ <CR>
