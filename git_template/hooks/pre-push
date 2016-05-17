@@ -29,5 +29,5 @@ class PushRejecter
   end
 end
 
-PushRejecter.new.run
+# PushRejecter.new.run
 

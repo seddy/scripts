@@ -181,3 +181,12 @@ eval "$(rbenv init -)"
 
 # Add ssh key for deploying to staging servers
 ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
+
+# Because awesome
+eval $(thefuck --alias)
+
+# AWS autocomplete
+complete -C aws_completer aws
+
+export NVM_DIR="/Users/edsaunders/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

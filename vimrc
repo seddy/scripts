@@ -171,6 +171,9 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:vim_markdown_folding_disabled = 1
 
 " Spellcheck
+autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 set spelllang=en_gb
 map <C-l> :setlocal spell!<CR>
 
