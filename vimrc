@@ -177,6 +177,8 @@ autocmd FileType gitcommit setlocal spell
 set spelllang=en_gb
 map <C-l> :setlocal spell!<CR>
 
+let g:jsx_ext_required = 0
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
