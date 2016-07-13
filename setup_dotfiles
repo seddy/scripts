@@ -21,6 +21,7 @@ ensure_link "${PWD}/.vim" "$HOME/.vim"
 ensure_link "${PWD}/ackrc" "$HOME/.ackrc"
 ensure_link "${PWD}/gitconfig" "$HOME/.gitconfig"
 ensure_link "${PWD}/gitignore_global" "$HOME/.gitignore_global"
+ensure_link "${PWD}/iex.exs" "$HOME/.iex.exs"
 
 if [ -d $HOME/scripts_noths ]
 then
