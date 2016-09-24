@@ -167,3 +167,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/esaunder/perl5"; export PERL_MM_OPT;
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/home/esaunder/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
