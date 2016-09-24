@@ -22,6 +22,7 @@ ensure_link "${PWD}/ackrc" "$HOME/.ackrc"
 ensure_link "${PWD}/gitconfig" "$HOME/.gitconfig"
 ensure_link "${PWD}/gitignore_global" "$HOME/.gitignore_global"
 ensure_link "${PWD}/iex.exs" "$HOME/.iex.exs"
+ensure_link "${PWD}/ctags" "$HOME/.ctags"
 
 if [ -d $HOME/scripts_noths ]
 then
