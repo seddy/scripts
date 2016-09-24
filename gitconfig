@@ -32,9 +32,9 @@
   conflictstyle = diff3
   tool = vimdiff
 [pager]
-  diff = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
-  log =  /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
-  show = /home/esaunder/sites/git/git/contrib/diff-highlight/diff-highlight | less
+  diff = /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
+  log =  /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
 [push]
   default = current
 [user]
