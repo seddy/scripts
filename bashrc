@@ -87,6 +87,7 @@ path_items=(
   /user/sbin
   /usr/local/bin
   $HOME/perl5/bin
+  $HOME/android_sdk/android-studio/bin
 )
 
 for i in ${path_items[@]}
@@ -95,6 +96,10 @@ do
 done
 
 export PATH
+
+# Android dev setup
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_AVD_HOME=$HOME/.android
 
 # OB specific setup
 if [ -f $HOME/.openbet_env.bashrc ]; then
