@@ -41,5 +41,8 @@
   email = saunders.ed@gmail.com
   initials = es
   name = Ed 'seddy' Saunders
+	signingkey = CDEE9DC3B0B68708
 [web]
   browser = google-chrome
+[commit]
+  gpgsign = true
