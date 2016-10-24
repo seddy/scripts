@@ -179,6 +179,7 @@ map <C-l> :setlocal spell!<CR>
 
 let g:jsx_ext_required = 0
 
+" Neovim configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   tnoremap <A-h> <C-\><C-n><C-w>h

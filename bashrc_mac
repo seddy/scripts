@@ -41,7 +41,8 @@ if [ "$TERM" != "dumb" ]; then
   fi
 
   if [ $ARCH != "Linux" ]; then
-    alias vi='vim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
+    # alias vi='vim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
+    alias vi='nvim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
     alias ls='ls -G'
   else
     alias ls='ls --color=auto'
