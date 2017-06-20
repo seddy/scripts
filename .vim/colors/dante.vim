@@ -62,7 +62,7 @@ hi RedundantSpaces ctermbg=152
 hi SpellCap ctermfg=darkred guifg=red2
 " For spelling mistakes
 hi SpellBad ctermbg=darkred
-hi SpellLocal ctermbg=darkblue
+hi SpellLocal ctermbg=darkblue ctermfg=black
 " vim-indent-guides overrides because ewwwww for defaults
 hi IndentGuidesOdd  ctermbg=236
 hi IndentGuidesEven ctermbg=234
