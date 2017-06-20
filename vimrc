@@ -20,6 +20,7 @@ set wildignore+=*.swp,*.map,public/assets/*
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\vpublic\/assets',
   \ }
+let g:ctrlp_max_files=0
 
 set nocp
 filetype indent on
@@ -171,7 +172,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:vim_markdown_folding_disabled = 1
 
 " Spellcheck
-autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
+autocmd BufRead,BufNewFile *.md,*.markdown,*.txt setlocal spell
 autocmd FileType gitcommit setlocal spell
 
 set spelllang=en_gb
