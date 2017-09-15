@@ -194,7 +194,7 @@ if has('nvim')
 endif
 
 " NERDTree open
-map <C-n> :NERDTree<CR>
+map <C-n> :NERDTreeFind<CR>
 
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
