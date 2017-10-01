@@ -6,7 +6,7 @@
   df = diff
   l = log --topo-order
   flog = log --pretty=medium
-  glog = log --graph --decorate --pretty=oneline --abbrev-commit
+  glog = log --graph --decorate --pretty=oneline --topo-order --abbrev-commit --format='%C(yellow)%h %C(green)%ai %an%C(yellow) | %C()%s%C(auto)%d'
   ls = ls-files
   st = status
   standup = log --since yesterday --oneline --author 'Ed Saunders'
