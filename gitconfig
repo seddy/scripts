@@ -15,7 +15,7 @@
   diff = auto
   status = auto
 [core]
-  excludesfile = /home/esaunder/.gitignore_global
+  excludesfile = /home/seddy/.gitignore_global
 [credential]
   helper = cache --timeout=3600
 [format]
@@ -32,9 +32,9 @@
   conflictstyle = diff3
   tool = vimdiff
 [pager]
-  diff = /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
-  log =  /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
-  show = /home/esaunder/src/git/git/contrib/diff-highlight/diff-highlight | less
+  diff = /home/seddy/src/git/git/contrib/diff-highlight/diff-highlight | less
+  log =  /home/seddy/src/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/seddy/src/git/git/contrib/diff-highlight/diff-highlight | less
 [push]
   default = current
 [user]
