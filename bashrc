@@ -41,7 +41,6 @@ if [ "$TERM" != "dumb" ]; then
   fi
 
   if [ $ARCH != "Linux" ]; then
-    alias vi='vim' # SOME CUNTS HAVE FORCED THEIR OWN VIMRC ON PIVOTAL BOXES
     alias ls='ls -G'
   else
     alias ls='ls --color=auto'
@@ -128,6 +127,7 @@ else
   PROMPT_COMMAND="source ~/scripts/set_prompt_status"
 fi
 
+alias vi='nvim'
 alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
