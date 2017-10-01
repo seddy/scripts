@@ -127,6 +127,21 @@ else
   PROMPT_COMMAND="source ~/scripts/set_prompt_status"
 fi
 
+# Mac stupid overrides
+source "$HOME/scripts/git-completion.bash"
+
+# Load in the git branch prompt script
+# This is used in the PS1
+source ~/scripts/set_prompt_status_mac.sh
+
+# This will add up/down arrows and show untracked files
+export GIT_PS1_SHOWDIRTYSTATE="auto"
+export GIT_PS1_SHOWUPSTREAM=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWCOLORHINTS=1
+
+export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\e[0m\]" "\[\033[33m\]:> \[\e[0m\]"'
+
 alias vi='nvim'
 alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
