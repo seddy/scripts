@@ -31,8 +31,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set complete=.,w,b,u,t
 
-" Read .pp and .god files as ruby files for syntax
-au BufNewFile,BufRead *.pp set filetype=ruby
+" Read .rabl and .god files as ruby files for syntax
 au BufNewFile,BufRead *.god set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
 
@@ -437,4 +436,3 @@ hi x252_Grey82 ctermfg=252 guifg=#d0d0d0
 hi x253_Grey85 ctermfg=253 guifg=#dadada
 hi x254_Grey89 ctermfg=254 guifg=#e4e4e4
 hi x255_Grey93 ctermfg=255 guifg=#eeeeee
-

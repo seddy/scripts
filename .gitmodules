@@ -109,3 +109,6 @@
 [submodule "html5.vim"]
 	path = html5.vim
 	url = git@github.com:othree/html5.vim.git
+[submodule ".vim/bundle/vim-puppet"]
+	path = .vim/bundle/vim-puppet
+	url = git@github.com:rodjek/vim-puppet.git
