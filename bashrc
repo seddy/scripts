@@ -189,3 +189,7 @@ export NVM_DIR="/home/esaunder/.nvm"
 # Because awesome
 eval $(thefuck --alias)
 
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
