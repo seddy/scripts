@@ -147,6 +147,7 @@ alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
 alias ss="script/single_spec -c --format=doc"
+alias be="bundle exec"
 
 # Shorter git aliases, because those keystrokes matter...
 alias ga="git add"
