@@ -58,9 +58,6 @@
 [submodule ".vim/bundle/vim-yaml-helper"]
 	path = .vim/bundle/vim-yaml-helper
 	url = git@github.com:lmeijvogel/vim-yaml-helper.git
-[submodule ".vim/bundle/ag"]
-	path = .vim/bundle/ag
-	url = https://github.com/rking/ag.vim
 [submodule ".vim/bundle/sudo"]
 	path = .vim/bundle/sudo
 	url = git@github.com:vim-scripts/sudo.vim.git
