@@ -137,8 +137,9 @@ call unite#set_profile('files', 'smartcase', 1)
 call unite#custom#source('line,outline','matchers','matcher_fuzzy')
 
 " Try out the silver searcher...
-" let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:agprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 let g:unite_prompt='» '
 " let g:unite_source_grep_command='ack'
