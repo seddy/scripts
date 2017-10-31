@@ -115,6 +115,11 @@ if [ -f $HOME/scripts_twistilled/twistilled.bashrc ]; then
   source $HOME/scripts_twistilled/twistilled.bashrc
 fi
 
+# nested specific setup
+if [ -f $HOME/scripts_nested/nested.bashrc ]; then
+  source $HOME/scripts_nested/nested.bashrc
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # set prompt - note this will be overwritten by scripts/set_prompt_status
