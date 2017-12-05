@@ -97,6 +97,9 @@ done
 
 export PATH
 
+# Enable elixir/erlang shell history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Android dev setup
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_AVD_HOME=$HOME/.android
