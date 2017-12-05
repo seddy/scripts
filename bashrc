@@ -87,6 +87,7 @@ path_items=(
   /usr/local/bin
   $HOME/perl5/bin
   $HOME/android_sdk/android-studio/bin
+  $HOME/exercism
 )
 
 for i in ${path_items[@]}
@@ -118,6 +119,11 @@ fi
 # nested specific setup
 if [ -f $HOME/scripts_nested/nested.bashrc ]; then
   source $HOME/scripts_nested/nested.bashrc
+fi
+
+# Exercism bash completion http://exercism.io/
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+  . ~/.config/exercism/exercism_completion.bash
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
