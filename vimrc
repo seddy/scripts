@@ -175,11 +175,13 @@ let g:airline_symbols.space = "\ua0"
 map <space>r :VimShellInteractive --split="split \| resize 20" irb<cr>
 map <space>z :VimShellInteractive --split="split \| resize 20" ssh dev.noths.com -t "cd current && zeus c"<cr>
 
-" vim-rspec is awesome
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" vim-test is awesome
+let test#strategy = "neovim"
+map <Leader>f :TestFile<CR>
+map <Leader>s :TestNearest<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>a :TestSuite<CR>
+map <Leader>v :TestVisit<CR>
 
 " vim-markdown options
 let g:vim_markdown_folding_disabled = 1
