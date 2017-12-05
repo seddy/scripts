@@ -209,6 +209,10 @@ endif
 " NERDTree open
 map <C-n> :NERDTreeFind<CR>
 
+
+" Make camel case into snake case
+map <Leader>k :s#\(\<\u\l\+\\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
