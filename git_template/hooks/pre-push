@@ -2,7 +2,9 @@
 # Pre-push hook that rejects force pushes to master.
 # Requires Git > 1.8.2
 
-class PushRejecter
+module PushRejecter
+  extend self
+
   def run
     if pushing_to?("master")
       reject
@@ -15,10 +17,6 @@ class PushRejecter
     `git branch | grep "*" | sed "s/* //"`.match(branch.to_s)
   end
 
-  def forced_push? # NOTE: defunct now that this is configurable on github
-    `ps -ocommand= -p #{Process.ppid}`.match(/force/)
-  end
-
   def reject
     puts "Force push to master rejected."
     exit(1)
@@ -29,4 +27,4 @@ class PushRejecter
   end
 end
 
-PushRejecter.new.run
+PushRejecter.run
