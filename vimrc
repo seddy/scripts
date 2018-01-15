@@ -213,9 +213,27 @@ endif
 " NERDTree open
 map <C-n> :NERDTreeFind<CR>
 
-
 " Make camel case into snake case
 map <Leader>k :s#\(\<\u\l\+\\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
+
+" Stupid alchemist definition; has to be a better way of doing this. What if I
+" move to a different project with a different elixir/erlang version (for
+" example). Essentially, you need a specific release of the elixir/erlang
+" version we're using, so need to create this folder and do the following:
+"
+"   $ tar xvzf v1.5.2.tar.gz elixir-1.5.2/
+"   $
+"   $ wget https://github.com/elixir-lang/elixir/archive/v1.5.2.tar.gz
+"   $ wget https://github.com/erlang/otp/archive/OTP-20.1.tar.gz
+"   $
+"   $ ln -s elixir-1.5.2 elixir
+"   $ ln -s otp-OTP-20.1 otp
+"
+" This gives fucking awesome ability to view source code using :ExDef and
+" documentation with K in normal mode, but sticks to a single version of
+" elixir/erlang :(
+"
+let g:alchemist#elixir_erlang_src="/home/seddy/tmp/vim_alchemist_shit"
 
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000

@@ -118,3 +118,6 @@
 [submodule ".vim/bundle/vim-rhubarb"]
 	path = .vim/bundle/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
+[submodule ".vim/bundle/alchemist.vim.git"]
+	path = .vim/bundle/alchemist.vim.git
+	url = git@github.com:slashmili/alchemist.vim.git
