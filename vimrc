@@ -1,3 +1,6 @@
+" Attempt to fix fucked up terminal - seems to work: https://github.com/neovim/neovim/issues/7002
+set guicursor=
+
 syntax on
 set background=dark
 set hlsearch
