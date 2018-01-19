@@ -235,6 +235,9 @@ map <Leader>k :s#\(\<\u\l\+\\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
 "
 let g:alchemist#elixir_erlang_src="/home/seddy/tmp/vim_alchemist_shit"
 
+" vim-mix-format binding for quick happy formatting
+map <C-f> :MixFormat<CR>
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f

@@ -121,3 +121,6 @@
 [submodule ".vim/bundle/alchemist.vim.git"]
 	path = .vim/bundle/alchemist.vim.git
 	url = git@github.com:slashmili/alchemist.vim.git
+[submodule ".vim/bundle/vim-mix-format"]
+	path = .vim/bundle/vim-mix-format
+	url = git@github.com:mhinz/vim-mix-format.git
