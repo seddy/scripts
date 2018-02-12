@@ -238,6 +238,10 @@ let g:alchemist#elixir_erlang_src="/home/seddy/tmp/vim_alchemist_shit"
 " vim-mix-format binding for quick happy formatting
 map <C-f> :MixFormat<CR>
 
+" Something's gone shit and set the formatprg to do .!mix format -
+" Fuck that, I want gqq to align my comment blocks
+set formatprg=
+
 " Make ctrlp fast - see https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
   " Use ag over grep
