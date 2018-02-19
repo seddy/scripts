@@ -215,6 +215,7 @@ map <C-n> :NERDTreeFind<CR>
 
 " Make camel case into snake case
 map <Leader>k :s#\(\<\u\l\+\\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
+map <Leader>K :s#_\(\l\)#\u\1#g<CR>
 
 " Stupid alchemist definition; has to be a better way of doing this. What if I
 " move to a different project with a different elixir/erlang version (for
