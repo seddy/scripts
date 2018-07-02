@@ -191,6 +191,7 @@ let g:vim_markdown_folding_disabled = 1
 " Spellcheck
 autocmd BufRead,BufNewFile *.md,*.markdown,*.txt setlocal spell
 autocmd FileType gitcommit setlocal spell
+hi SpellBad ctermfg=15 ctermbg=1 gui=undercurl guisp=Red
 
 set spelllang=en_gb
 map <C-l> :setlocal spell!<CR>
@@ -241,7 +242,7 @@ map <C-f> :MixFormat<CR>
 
 " Something's gone shit and set the formatprg to do .!mix format -
 " Fuck that, I want gqq to align my comment blocks
-set formatprg=
+map <C-g> :set formatprg=<CR>
 
 " Make ctrlp fast - see https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
