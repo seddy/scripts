@@ -185,6 +185,46 @@ function android-disconnect () {
   echo "Done!"
 }
 
+function matrix() {
+  # Could put this in ruby script but meh; thanks @Adzz!
+  ruby -r io/console -e '
+    system("clear")
+    h, w = $stdin.winsize
+    time = []
+    def time.[](i)
+      super || (
+        moment = {green: [], white: [], off: []}
+        self[i] = moment if 0 <= i
+        moment
+      )
+    end
+    def time.shift
+      self[0]
+      super
+    end
+    chars = [*32.chr..126.chr]
+    print "\e[?25l"
+    at_exit { print "\e[?25h"; exit! unless $! }
+    loop do
+      now = time.shift
+      if rand < 0.2
+        y, x = 0, 1 + rand(w)
+        rate = (rand*10).to_i+1
+        len  = rand(30) + 5
+        1.upto(h+len) do |y|
+          time[y*rate][:white] << [y, x]
+          time[y*rate][:green] << [y-1, x]
+          time[y*rate][:off]   << [y-len, x]
+        end
+      end
+      to_ansi = -> pairs, chars { pairs.reject { |y, x| y <= 0 || h < y }.map { |y, x| "\e[#{y};#{x}H#{chars.sample}" } }
+      print "\e[0m",  to_ansi[now[:off],   [" "]].join
+      print "\e[37m", to_ansi[now[:white], chars].join
+      print "\e[38;5;#{[22, 28, 34, 40, 46].sample}m", to_ansi[now[:green], chars].join
+      sleep 0.001
+    end'
+}
+
 # Shit I need for ack for some reason
 export PERL5LIB=/home/esaunder/perl5/lib/perl5
 
