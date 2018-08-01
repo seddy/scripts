@@ -68,7 +68,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Necessary
-export EDITOR=vim
+export EDITOR=nvim
 export EXINIT="set notimeout"
 
 # Basic path
@@ -243,7 +243,6 @@ export NVM_DIR="/home/esaunder/.nvm"
 
 # Because awesome
 eval $(thefuck --alias)
-
 
 . $HOME/.asdf/asdf.sh
 
