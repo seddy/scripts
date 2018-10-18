@@ -124,3 +124,6 @@
 [submodule ".vim/bundle/vim-mix-format"]
 	path = .vim/bundle/vim-mix-format
 	url = git@github.com:mhinz/vim-mix-format.git
+[submodule ".vim/bundle/vim-graphql"]
+	path = .vim/bundle/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git

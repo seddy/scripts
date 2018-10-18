@@ -71,6 +71,9 @@ hi ColorColumn ctermbg=235 term=reverse
 " For light conditions uncomment this:
 " hi ColorColumn ctermbg=159 term=reverse
 
+" vim-graphql has horrendous highlighting
+hi graphqlName ctermfg=lightblue
+
 " syntax hi links
 hi link String          Constant
 hi link Character       Constant
