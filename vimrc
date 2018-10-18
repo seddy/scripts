@@ -49,6 +49,10 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+" Format elixir on save
+au BufWritePost *.ex :MixFormat
+au BufWritePost *.exs :MixFormat
+
 " Start up pathogen
 call pathogen#infect()
 call pathogen#helptags()
