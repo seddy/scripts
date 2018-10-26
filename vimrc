@@ -266,6 +266,9 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
           \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
           \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" Try to vim-lflow a bit
+let g:javascript_plugin_flow = 1
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
