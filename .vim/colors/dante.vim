@@ -74,6 +74,10 @@ hi ColorColumn ctermbg=235 term=reverse
 " vim-graphql has horrendous highlighting
 hi graphqlName ctermfg=lightblue
 
+" FFS javascript is fucking useless at understanding that people use vim
+hi jsFlowGroup ctermfg=darkgreen
+hi link jsFlowTypeValue Identifier
+
 " syntax hi links
 hi link String          Constant
 hi link Character       Constant

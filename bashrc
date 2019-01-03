@@ -253,3 +253,5 @@ if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
