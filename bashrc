@@ -88,6 +88,7 @@ path_items=(
   $HOME/perl5/bin
   $HOME/android_sdk/android-studio/bin
   $HOME/exercism
+  $HOME/vault
 )
 
 for i in ${path_items[@]}
