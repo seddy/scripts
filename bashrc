@@ -89,6 +89,7 @@ path_items=(
   $HOME/android_sdk/android-studio/bin
   $HOME/exercism
   $HOME/vault
+  $HOME/terraform
 )
 
 for i in ${path_items[@]}
@@ -256,3 +257,6 @@ if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/
 if [ -f '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export HISTIGNORE="&:vault*"
+export VAULT_CACERT=/home/seddy/src/nested-tech/gcp-setup/vault/ca.crt
+export VAULT_ADDR="https://127.0.0.1:8200"
