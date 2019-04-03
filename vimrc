@@ -53,6 +53,9 @@ endif
 au BufWritePost *.ex :MixFormat
 au BufWritePost *.exs :MixFormat
 
+" Format js with prettier innit
+au BufWritePost *.js :Prettier
+
 " Start up pathogen
 call pathogen#infect()
 call pathogen#helptags()
