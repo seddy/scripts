@@ -54,7 +54,7 @@ au BufWritePost *.ex :MixFormat
 au BufWritePost *.exs :MixFormat
 
 " Format js with prettier innit
-au BufWritePost *.js :Prettier
+au BufWritePre *.js :Prettier
 
 " Start up pathogen
 call pathogen#infect()
