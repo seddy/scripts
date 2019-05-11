@@ -90,6 +90,7 @@ path_items=(
   $HOME/exercism
   $HOME/vault
   $HOME/terraform
+  ./node_modules/.bin
 )
 
 for i in ${path_items[@]}
