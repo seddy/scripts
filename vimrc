@@ -67,13 +67,29 @@ au BufWritePre *.js :Prettier
 call pathogen#infect()
 call pathogen#helptags()
 
-colorscheme PaperColor
+" Set up colours correctly - change this to work in sunlight
 set background=dark
+
+" Setting a variable so only need to change the one line above to switch
+" context
+let s:is_dark=(&background == 'dark')
+
+if s:is_dark
+  let g:PaperColor_Theme_Options = {
+        \   'theme': {
+        \     'default': {
+        \       'transparent_background': 1
+        \     }
+        \   }
+        \ }
+else
+  " PaperColor does not do a light transparent background well!
+endif
+
+colorscheme PaperColor
 
 " vim-indent-guides overrides because ewwwww for defaults. This should
 " probably be done with the PaperColor config but lazy
-let s:is_dark=(&background == 'dark')
-
 if s:is_dark
   hi IndentGuidesOdd  ctermbg=236
   hi IndentGuidesEven ctermbg=235
