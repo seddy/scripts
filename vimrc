@@ -2,7 +2,6 @@
 set guicursor=
 
 syntax on
-set background=dark
 set hlsearch
 "set autoindent
 "set smartindent
@@ -12,7 +11,15 @@ set shiftwidth=2
 set number
 set mouse=nvi
 set t_Co=256
-colorscheme dante
+" Try a new colorscheme for light background...
+" set background=dark
+" colorscheme dante
+" " This is the bit that actually highlights trailing whitespace
+" match RedundantSpaces /\s\+$/
+" autocmd BufWinEnter * match RedundantSpaces /\s\+$/
+
+" " To make it show up in new tabs - use Ctrl-E
+" map  :match RedundantSpaces /\s\+$/ <CR>
 
 set expandtab
 
@@ -60,19 +67,26 @@ au BufWritePre *.js :Prettier
 call pathogen#infect()
 call pathogen#helptags()
 
-syn sync minlines=1000
+colorscheme PaperColor
+set background=dark
 
-" This is the bit that actually highlights trailing whitespace
-match RedundantSpaces /\s\+$/
-autocmd BufWinEnter * match RedundantSpaces /\s\+$/
+" vim-indent-guides overrides because ewwwww for defaults. This should
+" probably be done with the PaperColor config but lazy
+let s:is_dark=(&background == 'dark')
+
+if s:is_dark
+  hi IndentGuidesOdd  ctermbg=236
+  hi IndentGuidesEven ctermbg=235
+else
+  hi IndentGuidesOdd  ctermbg=252
+  hi IndentGuidesEven ctermbg=253
+endif
+
+syn sync minlines=1000
 
 " Put a line on 80 characters
 " let &colorcolumn=join(range(81,999),",")
-" Don't believe reevoo are making me make this 120, BOOO
-let &colorcolumn="120"
-
-" To make it show up in new tabs - use Ctrl-E
-map  :match RedundantSpaces /\s\+$/ <CR>
+let &colorcolumn="80"
 
 " :set list! to toggle
 set list

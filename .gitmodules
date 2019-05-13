@@ -112,3 +112,6 @@
 [submodule ".vim/bundle/vim-polyglot"]
 	path = .vim/bundle/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".vim/bundle/papercolor-theme"]
+	path = .vim/bundle/papercolor-theme
+	url = git@github.com:NLKNguyen/papercolor-theme.git
