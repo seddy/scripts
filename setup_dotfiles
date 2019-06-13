@@ -24,16 +24,8 @@ ensure_link "${PWD}/gitignore_global" "$HOME/.gitignore_global"
 ensure_link "${PWD}/iex.exs" "$HOME/.iex.exs"
 ensure_link "${PWD}/ctags" "$HOME/.ctags"
 
-if [ -d $HOME/scripts_noths ]
-then
-  cp $HOME/scripts_noths/noths_ed.ssh_key $HOME/.ssh/noths_ed
-fi
-
-if [ -d $HOME/scripts_reevoo ]
-then
-  # Do something here when we have something!
-  echo "Nothing to do for reevoo"
-fi
+# Needed for neovim setup
+ln -s ~/.vim ~/.config/nvim
 
 git submodule init
 git submodule update
