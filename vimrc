@@ -1,6 +1,6 @@
 " Attempt to fix fucked up terminal - seems to work: https://github.com/neovim/neovim/issues/7002
 set guicursor=
-
+let g:airline_powerline_fonts = 1
 syntax on
 set hlsearch
 "set autoindent

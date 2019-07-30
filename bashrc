@@ -251,13 +251,19 @@ eval $(thefuck --alias)
 
 . $HOME/.asdf/completions/asdf.bash
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export HISTIGNORE="&:vault*"
 export VAULT_CACERT=/home/seddy/src/nested-tech/gcp-setup/vault/ca.crt
 export VAULT_ADDR="https://127.0.0.1:8200"
+
+# This is for installing node via asdf. They demand you download keys which I
+# have no idea about the authenticity for before downloading. That's probably
+# sensible but I always forget, and do that for literally nothing else on
+# asdf.... so... fuck it, disabled.
+export NODEJS_CHECK_SIGNATURES=no
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
