@@ -302,6 +302,10 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Try to vim-flow a bit
 let g:javascript_plugin_flow = 1
 
+" Try to see whether neovim will give me credo feedback. Pro-tip, it does
+let g:neomake_elixir_enabled_makers = ['credo']
+autocmd! BufRead,BufWritePost *.ex,*.exs Neomake
+
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
