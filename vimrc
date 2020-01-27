@@ -69,6 +69,7 @@ call pathogen#helptags()
 
 " Set up colours correctly - change this to work in sunlight
 set background=dark
+" set background=light
 
 " Setting a variable so only need to change the one line above to switch
 " context
@@ -151,7 +152,7 @@ let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_mode_map = { 'mode': 'active',
    \ 'active_filetypes': ['ruby', 'eruby', 'php', 'css', 'less', 'cucumber', 'javascript'],
-   \ 'passive_filetypes': ['puppet'] }
+   \ 'passive_filetypes': ['puppet', 'python'] }
 
 " 4-space tabs was a NOTHS frontend thing, fuck that shit!
 " autocmd Filetype less setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
@@ -250,6 +251,8 @@ endif
 
 " NERDTree open
 map <C-n> :NERDTreeFind<CR>
+" Ignore compiled bullshit
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Make camel case into snake case
 map <Leader>k :s#\(\<\u\l\+\\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
@@ -302,9 +305,54 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Try to vim-flow a bit
 let g:javascript_plugin_flow = 1
 
+" Async linting stuff (nicked from @sadir)
+" call neomake#configure#automake('wr')
+call neomake#configure#automake('nrw')
+let g:neomake_serialize = 1
+
+let g:neomake_javascript_enabled_makers = ['eslint', 'prettier']
+let g:neomake_javascript_eslint_maker = {
+        \ 'exe': 'eslint',
+        \ 'args': ['--fix'],
+        \ }
+let g:neomake_javascript_prettier_maker = {
+        \ 'exe': 'prettier',
+        \ 'args': ['--write'],
+        \ }
+
+let g:neomake_elixir_enabled_makers = ['mixf', 'mix', 'credo']
+let g:neomake_elixir_mix_maker = {
+        \ 'exe': 'mix',
+        \ 'args': ['compile'],
+        \ 'errorformat':
+          \ '** %s %f:%l: %m,'.
+          \ '%Ewarning: %m,%C  %f:%l,%Z'
+        \ }
+let $MIX_QUIET=1
+let g:neomake_elixir_mixf_maker = {
+        \ 'exe': 'mix',
+        \ 'args': ['format'],
+        \ 'errorformat':
+          \ '** %s %f:%l: %m,'.
+          \ '%Ewarning: %m,%C  %f:%l,%Z'
+        \ }
+let g:neomake_elixir_credo_maker = {
+        \ 'exe': 'mix',
+        \ 'args': ['credo'],
+        \ }
+
+let g:neomake_python_enabled_makers = ['pylint']
+
 " Try to see whether neovim will give me credo feedback. Pro-tip, it does
-let g:neomake_elixir_enabled_makers = ['credo']
-autocmd! BufRead,BufWritePost *.ex,*.exs Neomake
+autocmd BufRead,BufWritePost * Neomake
+
+set autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup my_neomake_hooks
+  au!
+  autocmd User NeomakeJobFinished :checktime
+augroup END
 
 " Misc colour mapping
 hi x016_Grey0 ctermfg=16 guifg=#000000
