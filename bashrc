@@ -68,7 +68,13 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Necessary
-export EDITOR=nvim
+if [ -f $HOME/neovim/nvim ]
+then
+  export EDITOR=nvim
+else
+  export EDITOR=vi
+fi
+
 export EXINIT="set notimeout"
 
 # Basic path
@@ -90,7 +96,9 @@ path_items=(
   $HOME/exercism
   $HOME/vault
   $HOME/terraform
+  $HOME/neovim
   ./node_modules/.bin
+  $HOME/.poetry/bin
 )
 
 for i in ${path_items[@]}
@@ -157,9 +165,22 @@ export GIT_PS1_SHOWUPSTREAM=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWCOLORHINTS=1
 
-export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\e[0m\]" "\[\033[33m\]:> \[\e[0m\]"'
+function venv_string () {
+  if [[ $(env | grep "^VIRTUAL_ENV") == "" ]]
+  then
+    echo ""
+  else
+    echo " 🐍"
+  fi
+}
 
-alias vi='nvim'
+export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\e[0m\]" "\[\033[33m\]$(venv_string):> \[\e[0m\]"'
+
+if [ -f $HOME/neovim/nvim ]
+then
+  alias vi='nvim'
+fi
+
 alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "
 alias zs="zeus rspec -c --format=doc"
@@ -256,11 +277,17 @@ export HISTIGNORE="&:vault*"
 export VAULT_CACERT=/home/seddy/src/nested-tech/gcp-setup/vault/ca.crt
 export VAULT_ADDR="https://127.0.0.1:8200"
 
+# Because python :shrug:
+export PYTHONPATH=.
+
 # This is for installing node via asdf. They demand you download keys which I
 # have no idea about the authenticity for before downloading. That's probably
 # sensible but I always forget, and do that for literally nothing else on
 # asdf.... so... fuck it, disabled.
 export NODEJS_CHECK_SIGNATURES=no
+
+# Ensure python3 is used in gcp cli stuff
+export CLOUDSDK_PYTHON=python3
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc'; fi
