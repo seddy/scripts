@@ -266,7 +266,8 @@ export NVM_DIR="/home/esaunder/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Because awesome
-eval $(thefuck --alias)
+# *SIGH* doesn't work for some reason
+# eval $(thefuck --alias)
 
 . $HOME/.asdf/asdf.sh
 
