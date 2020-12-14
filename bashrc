@@ -78,7 +78,10 @@ fi
 export EXINIT="set notimeout"
 
 # Basic path
-PATH=""
+# Disabling; this disables python shit from working in a vim terminal because
+# petry amends the path, but running :terminal causes this file to be rerun...
+# hopefully this is Fine
+# PATH=""
 
 path_items=(
   ./bin

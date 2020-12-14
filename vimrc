@@ -343,6 +343,9 @@ let g:neomake_elixir_credo_maker = {
 
 let g:neomake_python_enabled_makers = ['pylint']
 
+" Not sure if this should be a neomake thing
+autocmd BufWritePre *.py execute ':Black'
+
 " Try to see whether neovim will give me credo feedback. Pro-tip, it does
 autocmd BufRead,BufWritePost * Neomake
 

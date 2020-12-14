@@ -118,3 +118,6 @@
 [submodule ".vim/bundle/neomake"]
 	path = .vim/bundle/neomake
 	url = git@github.com:neomake/neomake.git
+[submodule ".vim/bundle/black"]
+	path = .vim/bundle/black
+	url = git@github.com:psf/black.git
