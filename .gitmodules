@@ -121,3 +121,6 @@
 [submodule ".vim/bundle/black"]
 	path = .vim/bundle/black
 	url = git@github.com:psf/black.git
+[submodule ".vim/bundle/jedi-vim"]
+	path = .vim/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
