@@ -343,6 +343,11 @@ let g:neomake_elixir_credo_maker = {
 
 let g:neomake_python_enabled_makers = ['pylint']
 
+" Disable autocompletions in jedi. This is just because beam is massive so
+" every time I type `beam` everything pauses while the autocompletion is
+" generated
+let g:jedi#completions_enabled = 0
+
 " Not sure if this should be a neomake thing
 autocmd BufWritePre *.py execute ':Black'
 
