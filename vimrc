@@ -347,6 +347,12 @@ let g:neomake_python_enabled_makers = ['pylint']
 " every time I type `beam` everything pauses while the autocompletion is
 " generated
 let g:jedi#completions_enabled = 0
+" show_call_signatures is a massive pain its default mode because it gets in
+" the way of the buffer and makes it impossible to write dags or use beam (as
+" there are generally millions of call options). Setting it to 2 does nothing unless showmode is diesabled, which it isn't because it's more useful. But it's more useful than nothing :shrug:
+let g:jedi#show_call_signatures = 2
+" Changing the buffer is mad when looking for quick documentation
+let g:jedi#use_splits_not_buffers = "top"
 
 " Not sure if this should be a neomake thing
 autocmd BufWritePre *.py execute ':Black'
