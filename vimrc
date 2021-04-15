@@ -356,6 +356,8 @@ let g:jedi#use_splits_not_buffers = "top"
 
 " Not sure if this should be a neomake thing
 autocmd BufWritePre *.py execute ':Black'
+" Elasticsearch-fucking-curator means we can't be on a more recent version
+let g:black_virtualenv = "~/tmp/black_19.01b"
 
 " Try to see whether neovim will give me credo feedback. Pro-tip, it does
 autocmd BufRead,BufWritePost * Neomake
