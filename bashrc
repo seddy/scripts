@@ -68,12 +68,12 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Necessary
-if [ -f $HOME/neovim/nvim ]
-then
-  export EDITOR=nvim
-else
-  export EDITOR=vi
-fi
+# if [ -f $HOME/neovim/nvim ]
+# then
+export EDITOR=nvim
+# else
+#   export EDITOR=vi
+# fi
 
 export EXINIT="set notimeout"
 
@@ -179,10 +179,10 @@ function venv_string () {
 
 export PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\t\[\033[0;33m\]@\[\033[0;32m\]\w\[\e[0m\]" "\[\033[33m\]$(venv_string):> \[\e[0m\]"'
 
-if [ -f $HOME/neovim/nvim ]
-then
-  alias vi='nvim'
-fi
+# if [ -f $HOME/neovim/nvim ]
+# then
+alias vi='nvim'
+# fi
 
 alias rs="bundle exec rspec -c --format=doc"
 alias rc="bundle exec cucumber "

@@ -18,6 +18,13 @@ set t_Co=256
 " match RedundantSpaces /\s\+$/
 " autocmd BufWinEnter * match RedundantSpaces /\s\+$/
 
+" The csv plugin is gash for the most part; makes files unreadable and hard to
+" edit IMO
+let g:polyglot_disabled = ['csv']
+
+" Becoz stupid python, format sql to 4 spaces
+autocmd FileType sql setlocal shiftwidth=4 tabstop=4
+
 " " To make it show up in new tabs - use Ctrl-E
 " map  :match RedundantSpaces /\s\+$/ <CR>
 
