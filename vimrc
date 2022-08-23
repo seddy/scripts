@@ -44,7 +44,7 @@ filetype indent on
 filetype plugin on
 
 " Always strip whitespace for it be evil
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 set complete=.,w,b,u,t
 
@@ -114,7 +114,8 @@ let &colorcolumn="80"
 
 " :set list! to toggle
 set list
-set listchars=tab:>\.
+" set listchars=tab:>\.
+set listchars=tab:\ \ 
 
 " Toggle list and numbers on/off
 map  :set nolist! nonumber! <CR>
@@ -365,6 +366,11 @@ let g:jedi#use_splits_not_buffers = "top"
 autocmd BufWritePre *.py execute ':Black'
 " Elasticsearch-fucking-curator means we can't be on a more recent version
 let g:black_virtualenv = "~/tmp/black_19.01b"
+
+" Enable syntax folding in typescript for collapsing blocks, but open all
+" blocks (zR) when opening files
+autocmd Syntax typescript,typescriptreact setlocal foldmethod=syntax
+autocmd Syntax typescript,typescriptreact normal zR
 
 " Try to see whether neovim will give me credo feedback. Pro-tip, it does
 autocmd BufRead,BufWritePost * Neomake

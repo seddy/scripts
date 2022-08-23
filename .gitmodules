@@ -127,3 +127,6 @@
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
+[submodule ".vim/bundle/vim-prisma"]
+	path = .vim/bundle/vim-prisma
+	url = git@github.com:pantharshit00/vim-prisma.git
