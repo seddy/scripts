@@ -22,6 +22,7 @@
   pretty = format:%C(yellow)%h %C(green)%ai %an%C(yellow) | %C()%s%C(auto)%d
 [init]
   templatedir = ~/scripts/git_template
+	defaultBranch = main
 [instaweb]
   browser = google-chrome
   httpd = apache2ctl

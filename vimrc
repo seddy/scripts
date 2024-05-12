@@ -318,7 +318,8 @@ let g:javascript_plugin_flow = 1
 call neomake#configure#automake('nrw')
 let g:neomake_serialize = 1
 
-let g:neomake_javascript_enabled_makers = ['eslint', 'prettier']
+" let g:neomake_javascript_enabled_makers = ['eslint', 'prettier']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_maker = {
         \ 'exe': 'eslint',
         \ 'args': ['--fix'],

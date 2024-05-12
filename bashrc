@@ -281,6 +281,9 @@ export HISTIGNORE="&:vault*"
 export VAULT_CACERT=/home/seddy/src/nested-tech/gcp-setup/vault/ca.crt
 export VAULT_ADDR="https://127.0.0.1:8200"
 
+# Apparently docker-compose is now docker compose :shrug:, this is for old scripts
+alias docker-compose="docker compose"
+
 # Because python :shrug:
 export PYTHONPATH=.
 
@@ -298,3 +301,19 @@ if [ -f '/home/seddy/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/seddy/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/seddy/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/seddy/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/seddy/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/seddy/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
