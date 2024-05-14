@@ -5,27 +5,41 @@ function ensure_link {
   test -e "$2"
   if [[ $? == 0 ]]
   then
-    # TODO: There's a bug where this should back up the original, but it copies
-    # it to the PWD rather than the HOME folder, and then just fails to symlink
-    # it...
-    mv $2 "$2.orig"
+    test -L $2 || mv $2 "$2.orig"
   fi
   test -L "$2" || ln -s "$1" "$2"
 }
 
+# Install diff-highlight if we don't have it
+GIT_SOURCE_DIR="$HOME/src/git/git/"
+test -e ${GIT_SOURCE_DIR}
+if [[ $? == 1 ]]
+then
+  git clone git@github.com:git/git.git ${GIT_SOURCE_DIR}
+  cd ${GIT_SOURCE_DIR}/contrib/diff-highlight
+  make
+  cd -
+fi
+
+ensure_link "${PWD}" "$HOME/scripts"
 cd $HOME/scripts
 
 ensure_link "${PWD}/bashrc" "$HOME/.bashrc"
 ensure_link "${PWD}/vimrc" "$HOME/.vimrc"
 ensure_link "${PWD}/.vim" "$HOME/.vim"
 ensure_link "${PWD}/ackrc" "$HOME/.ackrc"
-ensure_link "${PWD}/gitconfig" "$HOME/.gitconfig"
+if [ $(whoami) == "ubuntu" ]
+then
+  ensure_link "${PWD}/gitconfig_ubuntu" "$HOME/.gitconfig"
+else
+  ensure_link "${PWD}/gitconfig" "$HOME/.gitconfig"
+fi
 ensure_link "${PWD}/gitignore_global" "$HOME/.gitignore_global"
 ensure_link "${PWD}/iex.exs" "$HOME/.iex.exs"
 ensure_link "${PWD}/ctags" "$HOME/.ctags"
 
 # Needed for neovim setup
-ln -s ~/.vim ~/.config/nvim
+ensure_link "${HOME}/.vim" "${HOME}/.config/.vim"
 
 git submodule init
 git submodule update

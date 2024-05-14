@@ -1,0 +1,46 @@
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  dc = diff --cached
+  df = diff
+  l = log --topo-order
+  flog = log --pretty=medium
+  glog = log --graph --decorate --pretty=oneline --topo-order --abbrev-commit --format='%C(yellow)%h %C(green)%ai %an%C(yellow) | %C()%s%C(auto)%d'
+  ls = ls-files
+  st = status
+  standup = log --since yesterday --oneline --author 'Ed Saunders'
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[core]
+  excludesfile = /home/ubuntu/.gitignore_global
+[credential]
+  helper = cache --timeout=3600
+[format]
+  pretty = format:%C(yellow)%h %C(green)%ai %an%C(yellow) | %C()%s%C(auto)%d
+[init]
+  templatedir = ~/scripts/git_template
+	defaultBranch = main
+[instaweb]
+  browser = google-chrome
+  httpd = apache2ctl
+  port = 12345
+[log]
+  decorate = true
+[merge]
+  conflictstyle = diff3
+  tool = vimdiff
+[pager]
+  diff = /home/ubuntu/src/git/git/contrib/diff-highlight/diff-highlight | less
+  log =  /home/ubuntu/src/git/git/contrib/diff-highlight/diff-highlight | less
+  show = /home/ubuntu/src/git/git/contrib/diff-highlight/diff-highlight | less
+[push]
+  default = current
+[user]
+  email = saunders.ed@gmail.com
+  initials = es
+  name = Ed Saunders
+[web]
+  browser = google-chrome
